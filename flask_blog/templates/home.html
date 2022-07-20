@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% if all_blogs|length < 1 %}
+            <h2>There are no blogs. Create one by click <span><a href="{{ url_for('new_blog') }}">NEW BLOG</a></span>.</h2>
+    {% endif %}
+        {% for blog in all_blogs %}
+            <div>
+                <a class="home_blog" href="{{url_for('the_id',id=blog.id)}}">
+                    <h2 class="blog_title">{{blog.title}}</h2>
+                    <p class="blog_author">{{blog.author}}</p>
+                </a>
+                <!-- <p>{{blog.body}}</p> -->
+                <br>
+                <br>
+            </div>
+        {% endfor %}
+{% endblock %}

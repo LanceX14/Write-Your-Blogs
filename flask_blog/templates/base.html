@@ -1,0 +1,21 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/blog.css')}}">
+    {% block head %} 
+    <title>Blog Center</title>
+    {% endblock %}
+</head>
+<body>
+    <center>
+            <div class="topnav">
+                <h1  style="display: inline;">Your Blog Corner</h1>
+                <a class="base" href="/"><button class="base_button" id="home">Home</button></a>
+                <a class="base" href="{{url_for('new_blog')}}"><button class="base_button" id="new_blog">New Blog</button></a>
+            </div>
+        {% block body %} {% endblock %}
+    </center>
+</body>
+</html>
